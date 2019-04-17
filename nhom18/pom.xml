@@ -68,6 +68,11 @@
 		    <artifactId>font-awesome</artifactId>
 		    <version>4.7.0</version>
 		</dependency>
+		<dependency>
+            <groupId>com.google.cloud.sql</groupId>
+            <artifactId>mysql-socket-factory</artifactId>
+            <version>1.0.2</version>
+        </dependency>
 		
 	</dependencies>
 
@@ -77,6 +82,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>1.2.1</version>
+            </plugin>
 		</plugins>
 	</build>
 
