@@ -3,16 +3,12 @@
 <head>
 </head>
 <body>
-	<p th:text="${details.id}"></p>
-	<p th:text="${details.content}"></p>
-	<p th:text="${details.idnews.id}"></p>
-	
-	<p th:text="${news.id}"></p>
-	<p th:text="${news.name}"></p>
-	<p th:text="${news.image}"></p>
-	<p th:text="${news.postday}"></p>
-	<p th:text="${news.categoryNews.id}"></p>
-	<p th:text="${news.author.fullname}"></p>
-	
+
+	<p th:text="${comment.usercmt}"></p>
+	<p th:text="${comment.content}"></p>
+	<p th:text="${comment.newsDetails.idnews.name}"></p>
+
+
+
 </body>
 </html>

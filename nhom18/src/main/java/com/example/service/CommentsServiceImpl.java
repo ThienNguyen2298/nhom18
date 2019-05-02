@@ -18,5 +18,10 @@ public class CommentsServiceImpl implements CommentsService {
 		// TODO Auto-generated method stub
 		return commentsRepository.findAllCommentsByNewsDetails(id);
 	}
+	@Override
+	public void save(Comments cmt) {
+		// TODO Auto-generated method stub
+		commentsRepository.save(cmt);
+	}
 
 }

@@ -3,8 +3,8 @@
 <head th:replace="layout :: head">
 </head>
 <body>
-<!-- Phần header -->
-		<header >
+	<!-- Phần header -->
+	<header>
 			<div class="header-top">
 				<div class="container">
 					<div class="row">
@@ -61,53 +61,59 @@
 				</div>
 			</div>
 		</header>
-		<!-- End header -->
-		
-		<div style="margin: 0 auto; width: 75%;">
-			<div style="margin: 0 auto; width: 70%;" >
-					<div class="form-group">
-					  	<div  class="card-header" style="text-align:center; color: green;">EDIT A NEWS</div>
-					</div>
-					<form action="#" th:action="@{/news/update}" th:object="${news}" method="post" novalidate="novalidate">
-						<input type="hidden" th:field="*{id}" />
-					  <div class="form-group">
-					  	<label for="">Title News:</label>
-					    <input type="text" class="form-control" th:field="*{name}" name="name" placeholder="Title news">
-					  </div>
-					  
-					  <div class="form-group">
-					  	<label for="">Post Day:</label>
-					    <input type="date" name="postday" th:field="*{postday}" class="form-control">
-					  </div>
-					  
-					  
-					  
-					  <div class="form-group">
-					  	<label for="">Content News:</label>
-					    <textarea class="form-control" name="content" th:text="${content}" rows="3" id="message-text" placeholder="Content news"></textarea>
-					  </div>
-					  
-					  <div class="form-group">
-					  	<label for="">Category News:</label>
-					    <select name="categoryNews" th:field="*{categoryNews}" class="form-control">
-					    	<option th:each="ca,iterStat : ${lstcatenews}"
-					    	 th:value="${ca.id}" th:text="${ca.name}" >TP.HCM</option>
-					    </select>
-					  </div>
-					  
-					  <div class="form-group form-check">
-					    <input type="checkbox" class="form-check-input" id="Agree">
-					    <label class="form-check-label" for="exampleCheck1">Xác nhận sửa tin tức</label>
-					  </div>
-					  <div class="form-group" style="text-align:center;">
-					  	<button type="submit" disabled="disabled" id="btnCreate" class="btn btn-success">Save</button>
-					  </div>
-					</form>
-				
+	<!-- End header -->
+
+	<div style="margin: 0 auto; width: 75%;">
+		<div style="margin: 0 auto; width: 70%;">
+			<div class="form-group">
+				<div class="card-header" style="text-align: center; color: green;">EDIT
+					A NEWS</div>
 			</div>
+			<form action="#" th:action="@{/news/update}" th:object="${news}"
+				method="post" novalidate="novalidate">
+				<input type="hidden" th:field="*{id}" />
+				<div class="form-group">
+					<label for="">Title News:</label> <input type="text"
+						class="form-control" th:field="*{name}" name="name"
+						placeholder="Title news">
+				</div>
+
+				<div class="form-group">
+					<label for="">Post Day:</label> <input type="date" name="postday"
+						th:field="*{postday}" class="form-control">
+				</div>
+
+
+
+				<div class="form-group">
+					<label for="">Content News:</label>
+					<textarea class="form-control" name="content" th:text="${content}"
+						rows="3" id="message-text" placeholder="Content news"></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="">Category News:</label> <select name="categoryNews"
+						th:field="*{categoryNews}" class="form-control">
+						<option th:each="ca,iterStat : ${lstcatenews}" th:value="${ca.id}"
+							th:text="${ca.name}">TP.HCM</option>
+					</select>
+				</div>
+
+				<div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="Agree">
+					<label class="form-check-label" for="exampleCheck1">Xác
+						nhận sửa tin tức</label>
+				</div>
+				<div class="form-group" style="text-align: center;">
+					<button type="submit" disabled="disabled" id="btnCreate"
+						class="btn btn-success">Save</button>
+				</div>
+			</form>
+
 		</div>
-			
-	
+	</div>
+
+
 	<footer th:replace="layout :: footer"></footer>
 	<script>
     $(function () {

@@ -67,7 +67,7 @@ public class HomeController {
 	public String viewdetail(HttpSession session, @PathVariable int id, ModelMap model)
 	{
 		NewsDetails nDetails = newsDetailsService.findNewsDetailsByIdNews(id);
-		List<Comments> list = commentsService.findAllCommentsByNewsDetails(nDetails.getId());
+		List<Comments> list = commentsService.findAllCommentsByNewsDetails(nDetails.getId()); 
 		model.put("newsdetails", nDetails);
 		model.put("catenews", categoryNewsService.findAll());
 		model.put("lstcmt", list);
@@ -194,7 +194,18 @@ public class HomeController {
 		return "redirect:/home/newsmanagement";
 		
 	}
-	//
+	//Comment đơn giản.
+	@PostMapping("viewdetail/comment/{id}")
+	public String comment(@PathVariable int id,@RequestParam("name") String name,
+			@RequestParam("content") String content,ModelMap model) {
+		Comments cmt =new Comments();
+		cmt.setId(0);
+		cmt.setUsercmt(name);
+		cmt.setContent(content);
+		cmt.setNewsDetails(newsDetailsService.findOne(id));
+		commentsService.save(cmt);
+		return "redirect:/home/viewdetail/"+id;
+	}
 	
 	
 }
